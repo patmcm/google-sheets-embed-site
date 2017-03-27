@@ -1,0 +1,51 @@
+<html>
+
+<head>
+<title>Google Sheets Embeded Template - Sheet 3</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script>
+	//This function runs when the frame is reloaded. Resizes the frame to full screen when loading on mobile.
+	//Unfortunately you cannot change the css of the incoming iframe from Google (as far as I know)
+	//The .contents().find('table') is a bit of a workaround to at least resize the main table of the iframe
+	//Couldn't change any other CSS even with contents().find()
+	function frameLoaded(){
+    	$('.mainFrame').contents().find('table').css("width","100%","height","98%");
+	}
+</script>
+</head>
+
+<body>
+
+<div id="page-wrap">
+	<!--Area for links and logos -->
+    <ul class="topList">
+    	<!--Place to add a logo if you'd like-->
+    	<li class="logo"><img src="your_logo.png"></li>
+    		<!-- Links to your other sheets -->
+			<li class="topBut"><a href="index.html">Sheet 1</a></li>
+    		<li class="topBut"><a href="sheet2.html">Sheet 2</a></li>
+    		<li class="topBut"><a href="sheet3.html">Sheet 3</a></li>
+
+    		<!-- Add an optional link to a form - Jotform is great for this-->
+    		<li class="topBut"><a href="https://form.jotform.us" target="_blank">ORDER-FORM</a></li>
+    </ul>
+
+    <div class="frame-wrap">
+		<!--Add your embeded Google sheet below. Only add the the url after "src=". 
+		The function frameLoaded() is defined above.-->
+	    <iframe class="mainFrame" width="100%" height="98%" onload="frameLoaded(); return false" src="YOUR GOOGLE SHEET EMBED URL"></iframe>
+    </div>
+
+
+    <div class="rightCol">
+    	<h2>Welcome to the Google Sheets Embeded Template</h2>
+    		<p>Need a place to display your Google Sheets but don't like sending Google's crazy long URL to people? Well here's a fairly easy solution for putting a live Google sheet on the web.</p>
+    		<p>This right hand column is used for descriptive text, downloadable files (such as order forms), or links to outside resources.</p>
+    	<h2>I don't like this column on the right and I want it somewhere else!</h2>
+    		<p>Good news everyone! This column will float below when viewed on mobile due to the iframe resize function and a media query that adds a float left.</p>
+    		<p>If you'd like to display your entire sheet's width and have this column below it, just change the css class .framewrap to width=100%; and the .rightCol from float=right; to float=left;</p>
+    </div>
+
+</div>
+</body>
+</html>

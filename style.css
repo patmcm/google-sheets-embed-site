@@ -1,0 +1,159 @@
+body {
+    background-color: white;
+    text-align: center;
+}
+
+h1 {
+    color: navy;
+    margin-left: 20px;
+}
+
+li {
+    float:left;
+}
+
+a:visited {
+    color: black;
+}
+
+#page-wrap {
+    text-align: left;
+    margin: 0 auto;
+    width:100%;
+}
+
+.topList {
+    list-style: none;
+    display: inline-block;
+    position: absolute;
+    top: -4px;
+}
+
+ul.topList{
+    margin-left:-35px;
+    z-index: 100;
+}
+
+.topList a {
+    display: inline;
+    padding: 12.5px 30px 12.5px 30px;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: navy;
+    text-decoration: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+}
+
+.topList img {
+    width: 100%;
+    height: auto;
+}
+
+.logo {
+    width: 19rem;
+    height: 25px;
+    padding-right: 10px;
+    padding-top: 0px;
+}
+
+li.topBut a{
+    border:none;
+    color:black;
+}
+
+li.topBut a:hover{
+    color:green;
+    text-decoration: underline;
+}
+
+li.topBut{
+    margin-top: 2pc;
+}
+
+/*Wraps around the frame and allows the iframe to be clipped below
+If your sheet is wider than 75% resize the width*/
+.frame-wrap{
+    width: 75%;
+    float:left;
+    height: 100%;
+    position: relative;
+}
+
+/*clip removes google sheets header - resize according to your sheet size. 
+remove if you don't care about google headers - (this is a workaround to edit content within iframe)*/
+.mainFrame {
+	width: 100%;
+	height: 92%;
+    position: absolute;
+    margin-top: 60px;
+    clip: rect(32px,891px,1094px,0px);
+    border: none;
+}
+
+/*Right hand text column - if you'd like this below the frame, float left and increase .frame-wrap's width*/
+.rightCol {
+    float:right;
+    width: 23%;
+    padding-top: 82px;
+    padding-right: 5px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+}
+
+/*For screen sizes under 800px - cell phones, tablets*/
+@media only screen and (max-device-width: 800px) {/
+    .topList {
+        position: relative;
+    }
+
+    .topList a {
+        padding: 21px 14px 50px 14px;
+        font-size: 27px;
+    }
+
+    .logo {
+        width: 260px;
+        padding-right: 20px
+    }
+
+    li.topBut{
+        margin-top: 0px;
+    }
+
+    .framewrap{
+        width: 900px;
+        margin-top: 29px;
+    }
+
+    .mainframe {
+        width: 890px;
+        margin-top: 29px;
+    }
+
+    .rightCol {
+        width:100%;
+        padding-top:1px;
+        padding-right:0px;
+        margin-top: -100px;
+    }
+}
+
+/*For larger screen sizes - will want to adjust the frame widths below relative to your google sheet's width*/
+@media screen and (min-width: 1200px){
+    .frame-wrap {
+        width: 900px;
+        float:left;
+    }
+
+    .mainframe {
+        width: 890px;
+        float:left;
+    }
+
+    .rightCol {
+        min-width: 21%;
+        max-width: 100%;
+        float:left;
+        padding-left:5px;
+    }
+}
